@@ -1,12 +1,17 @@
 #! /bin/bash
 # numbers.sh
 # Cole Matsueda
-echo -n "Enter a number: "
+
+echo "Enter a number: "
 read n 
-num=$(( $n % 2 ))
-if [ $num -eq 0 ] 
-then
-	echo "$n is an even number"
-else
-	echo "$n is an odd number"
-fi
+NUMBER=1
+while [ "$NUMBER" -le "$n" ]
+do
+	if [ $((NUMBER%2)) -eq 0 ] 
+	then
+		echo "$NUMBER is an even number"
+	else
+		echo "$NUMBER is an odd number"
+	fi
+	NUMBER=$((NUMBER+1))
+done
